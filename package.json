@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/database/data-source.ts",
+    "schema:sync": "npm run typeorm schema:sync -- -d ./src/database/data-source.ts",
+    "migration:show": "npm run typeorm migration:show -- -d ./src/database/data-source.ts",
+    "migration:generate": "npm run typeorm migration:generate -- -d ./src/database/data-source.ts",
+    "migration:create": "npm run typeorm migration:create",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev src/server.ts"
   },
@@ -16,6 +22,11 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "@types/uuid": "^8.3.4",
+    "express": "^4.18.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.10",
+    "typeorm": "^0.3.7",
+    "uuid": "^8.3.2"
   }
 }
