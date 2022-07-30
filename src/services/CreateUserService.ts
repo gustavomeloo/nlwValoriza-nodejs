@@ -1,15 +1,17 @@
 import { UserRepositories } from "../repositories/UsersRepositories";
+import { hash } from 'bcryptjs'
 
 interface IUserRequest {
   name: string;
   email: string;
   admin?: boolean;
+  password: string;
 
 }
 
 class CreateUserService {
  
-  async execute({name, email, admin} : IUserRequest) {
+  async execute({name, email, admin = false, password} : IUserRequest) {
 
     if(!email){
       throw new Error("Email Incorrect");
@@ -25,9 +27,14 @@ class CreateUserService {
       throw new Error("User Already Exists");
     }
 
+    const passwordHash = await hash(password, 8)
+
 
     const user = UserRepositories.create({
-      name, email, admin
+      name, 
+      email, 
+      admin, 
+      password: passwordHash
     });
 
     await UserRepositories.save(user);
