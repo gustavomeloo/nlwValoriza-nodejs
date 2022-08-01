@@ -1,10 +1,7 @@
-# nlwValoriza-nodejs
-Api using Typeorm and JWT, made in NodeJs together with rocketseat in NLW 6th edition
-
 <h1 align="center">Nlw Valoriza :speech_balloon:</h1>
 
 <p align="center">  
-Nlw Valoriza é um projeto que enviamos elogios para um amigo ou companheiro de equipe
+Nlw Valoriza is a project that we send compliments to a friend or teammate
 <p
 Nlw Valoriza is a joint project with RocketSeat on the 6th edition of NLW.</br>
 API Made in nodejs and applied in TypeScript, Nlw Valoriza uses many libraries(Typeorm, express, JWT).
